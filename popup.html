@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeetCode AI Motivator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <div class="header-content">
+        <h1>🤖 AI Motivator</h1>
+        <p>Real-time motivation & hints for LeetCode</p>
+      </div>
+      <div class="status-indicator" id="statusIndicator">
+        <span class="status-dot"></span>
+        <span class="status-text">Active</span>
+      </div>
+    </header>
+
+    <main class="popup-main">
+      <!-- Settings Section -->
+      <section class="settings-section">
+        <h2>Settings</h2>
+        
+        <!-- Enable/Disable Toggle -->
+        <div class="setting-item">
+          <label class="toggle-label">
+            <input type="checkbox" id="enableToggle" checked>
+            <span class="toggle-slider"></span>
+            <span class="toggle-text">Enable AI Motivator</span>
+          </label>
+        </div>
+
+        <!-- Motivation Level -->
+        <div class="setting-item">
+          <label for="motivationLevel">Motivation Level:</label>
+          <select id="motivationLevel" class="select-input">
+            <option value="low">Subtle</option>
+            <option value="medium" selected>Balanced</option>
+            <option value="high">Enthusiastic</option>
+          </select>
+        </div>
+
+        <!-- Auto-refresh Interval -->
+        <div class="setting-item">
+          <label for="refreshInterval">Auto-refresh Interval:</label>
+          <select id="refreshInterval" class="select-input">
+            <option value="5">5 seconds</option>
+            <option value="10">10 seconds</option>
+            <option value="15" selected>15 seconds</option>
+            <option value="30">30 seconds</option>
+            <option value="60">1 minute</option>
+          </select>
+        </div>
+
+        <!-- Voice Toggle -->
+        <div class="setting-item">
+          <label class="toggle-label">
+            <input type="checkbox" id="voiceToggle" checked>
+            <span class="toggle-slider"></span>
+            <span class="toggle-text">Enable Voice Feedback</span>
+          </label>
+        </div>
+
+        <!-- Manual Analysis Button -->
+        <div class="setting-item">
+          <button id="manualAnalyze" class="primary-button">
+            🔍 Analyze Current Code
+          </button>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="stats-section">
+        <h2>Today's Stats</h2>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number" id="analysisCount">0</span>
+            <span class="stat-label">Analyses</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="motivationCount">0</span>
+            <span class="stat-label">Motivations</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="hintCount">0</span>
+            <span class="stat-label">Hints</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent Activity -->
+      <section class="activity-section">
+        <h2>Recent Activity</h2>
+        <div class="activity-list" id="activityList">
+          <div class="activity-item">
+            <span class="activity-icon">🎯</span>
+            <span class="activity-text">Extension loaded successfully</span>
+            <span class="activity-time">Just now</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="popup-footer">
+      <div class="footer-content">
+        <span class="version">v1.0.0</span>
+        <button id="resetStats" class="text-button">Reset Stats</button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html> 

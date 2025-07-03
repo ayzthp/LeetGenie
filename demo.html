@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetCode AI Motivator - Demo</title>
+    <link rel="stylesheet" href="content.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8fafc;
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .demo-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .demo-header h1 {
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        
+        .demo-header p {
+            color: #64748b;
+            font-size: 18px;
+        }
+        
+        .demo-section {
+            margin-bottom: 40px;
+        }
+        
+        .demo-section h2 {
+            color: #1e293b;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .demo-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .demo-item h3 {
+            color: #374151;
+            margin-bottom: 15px;
+        }
+        
+        .demo-item p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        
+        .code-editor {
+            background: #1e293b;
+            color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .code-editor::before {
+            content: 'LeetCode Editor (Simulated)';
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: #1e293b;
+            color: #f1f5f9;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-icon {
+            font-size: 18px;
+            width: 24px;
+            text-align: center;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 10px 5px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .demo-actions {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>🤖 LeetCode AI Motivator</h1>
+            <p>Real-time AI motivation and hints while solving LeetCode problems</p>
+        </div>
+
+        <div class="demo-section">
+            <h2>🎯 How It Works</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>1. Real-time Monitoring</h3>
+                    <p>The extension automatically detects when you're coding on LeetCode and monitors your code changes in real-time using advanced DOM observation techniques.</p>
+                </div>
+                <div class="demo-item">
+                    <h3>2. AI Analysis</h3>
+                    <p>Your code is sent to Google's Gemini AI with context about the problem, which provides personalized motivation and subtle hints without giving away solutions.</p>
+                </div>
+                <div class="demo-item">
+                    <h3>3. Smart Feedback</h3>
+                    <p>A beautiful floating panel appears with encouraging messages and helpful hints, designed to keep you motivated and guide you in the right direction.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>💻 Simulated LeetCode Environment</h2>
+            <div class="code-editor">
+class Solution {
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # Your code here
+        hash_map = {}
+        
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in hash_map:
+                return [hash_map[complement], i]
+            hash_map[num] = i
+        
+        return []
+            </div>
+            <p><em>Above: A simulated LeetCode editor. In the real extension, this would trigger AI analysis after 3 seconds of typing.</em></p>
+        </div>
+
+        <div class="demo-section">
+            <h2>✨ Key Features</h2>
+            <ul class="feature-list">
+                <li><span class="feature-icon">⚡</span><strong>Real-time Analysis:</strong> Monitors code changes as you type</li>
+                <li><span class="feature-icon">🧠</span><strong>AI-Powered:</strong> Uses Google's Gemini 2.0 Flash model</li>
+                <li><span class="feature-icon">💪</span><strong>Motivation:</strong> Encouraging messages to keep you going</li>
+                <li><span class="feature-icon">💡</span><strong>Smart Hints:</strong> Subtle guidance without spoilers</li>
+                <li><span class="feature-icon">⚙️</span><strong>Customizable:</strong> Three motivation levels to choose from</li>
+                <li><span class="feature-icon">📊</span><strong>Statistics:</strong> Track your daily progress and usage</li>
+                <li><span class="feature-icon">🎨</span><strong>Beautiful UI:</strong> Modern, responsive design</li>
+                <li><span class="feature-icon">🔒</span><strong>Privacy-First:</strong> No data stored, only sent to API</li>
+            </ul>
+        </div>
+
+        <div class="demo-section">
+            <h2>🚀 Example AI Responses</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>Motivation Message</h3>
+                    <p><strong>💪 "Excellent approach! Using a hash map for O(n) time complexity shows great algorithmic thinking. You're on the right track!"</strong></p>
+                </div>
+                <div class="demo-item">
+                    <h3>Smart Hint</h3>
+                    <p><strong>💡 "Consider what happens when you find a complement that matches the current number. The hash map lookup will give you the index you need."</strong></p>
+                </div>
+                <div class="demo-item">
+                    <h3>Encouragement</h3>
+                    <p><strong>🎯 "You've got this! The two-pointer approach you're considering could work, but think about edge cases with duplicate numbers."</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>📱 Extension Interface</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>Popup Controls</h3>
+                    <p>Access settings, view statistics, and trigger manual analysis through the extension popup. Toggle the AI motivator on/off and adjust motivation levels.</p>
+                </div>
+                <div class="demo-item">
+                    <h3>Floating Panel</h3>
+                    <p>A beautiful, color-coded panel appears on the right side of the screen with AI feedback. Auto-hides after 10 seconds to keep the interface clean.</p>
+                </div>
+                <div class="demo-item">
+                    <h3>Manual Trigger</h3>
+                    <p>A "🤖 AI Help" button in the top-right corner allows you to request analysis on-demand, perfect for when you want immediate feedback.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-actions">
+            <h2>Ready to Get Started?</h2>
+            <p>Install the extension and experience AI-powered motivation while solving LeetCode problems!</p>
+            <a href="INSTALLATION.md" class="cta-button">📖 Installation Guide</a>
+            <a href="README.md" class="cta-button">📚 Full Documentation</a>
+        </div>
+    </div>
+
+    <!-- Demo the floating panel -->
+    <div class="ai-motivator-panel ai-success" style="display: block; position: fixed; top: 50%; right: 20px; transform: translateY(-50%);">
+        <div class="ai-header">
+            <span class="ai-title">🤖 AI Motivator</span>
+            <button class="ai-close" onclick="this.parentElement.parentElement.style.display='none'">×</button>
+        </div>
+        <div class="ai-content">
+            💪 Great job! Your hash map approach is perfect for this problem.<br><br>
+            💡 Remember to handle the case where the complement equals the current number.
+        </div>
+    </div>
+
+    <!-- Demo the manual button -->
+    <button class="ai-manual-button" style="position: fixed; top: 20px; right: 20px;">
+        🤖 AI Help
+    </button>
+</body>
+</html> 

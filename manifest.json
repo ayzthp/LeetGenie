@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "LeetCode AI Motivator",
+  "version": "1.0.0",
+  "description": "Real-time AI motivation and hints while solving LeetCode problems using Gemini API",
+  "permissions": [
+    "scripting",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://leetcode.com/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "LeetCode AI Motivator"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["panel.html", "panel.css"],
+      "matches": ["https://leetcode.com/*"]
+    }
+  ]
+} 

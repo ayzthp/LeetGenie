@@ -1,0 +1,351 @@
+/* LeetCode AI Motivator Styles */
+
+/* AI Motivator Panel */
+.ai-motivator-panel {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 320px;
+  max-height: 400px;
+  background: #ffffff;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  z-index: 10000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: block;
+  animation: slideIn 0.3s ease-out;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Panel Header */
+.ai-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.ai-header.ai-expandable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.ai-header.ai-expandable:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+.ai-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ai-voice-indicator {
+  font-size: 12px;
+  animation: pulse 1s infinite;
+  margin-left: 8px;
+}
+
+.ai-expand-icon {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+/* Panel Content */
+.ai-content {
+  padding: 16px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #333;
+  max-height: 300px;
+  overflow-y: auto;
+  transition: all 0.3s ease, opacity 0.2s ease;
+}
+
+.ai-status {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.ai-refresh-info {
+  font-size: 11px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Panel Types */
+.ai-motivator-panel.ai-loading {
+  border-color: #ffd700;
+}
+
+.ai-motivator-panel.ai-loading .ai-header {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+}
+
+.ai-motivator-panel.ai-success {
+  border-color: #10b981;
+}
+
+.ai-motivator-panel.ai-success .ai-header {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.ai-motivator-panel.ai-error {
+  border-color: #ef4444;
+}
+
+.ai-motivator-panel.ai-error .ai-header {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.ai-motivator-panel.ai-info {
+  border-color: #3b82f6;
+}
+
+.ai-motivator-panel.ai-info .ai-header {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+/* Collapsed State */
+.ai-motivator-panel.ai-collapsed {
+  height: auto;
+}
+
+.ai-motivator-panel.ai-collapsed .ai-content {
+  display: none;
+}
+
+/* Manual Trigger Button */
+.ai-manual-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.ai-manual-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.ai-manual-button:active {
+  transform: translateY(0);
+}
+
+/* Voice Toggle Button */
+.ai-voice-button {
+  position: fixed;
+  top: 20px;
+  right: 120px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.ai-voice-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+}
+
+.ai-voice-button:active {
+  transform: translateY(0);
+}
+
+/* Voice indicator animation */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Loading Animation */
+.ai-loading .ai-content::after {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Auto-refresh indicator */
+.ai-refresh-indicator {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ai-motivator-panel {
+    width: calc(100vw - 40px);
+    right: 20px;
+    left: 20px;
+    top: 80px;
+  }
+  
+  .ai-manual-button {
+    top: 10px;
+    right: 10px;
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+  
+  .ai-voice-button {
+    top: 10px;
+    right: 90px;
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .ai-motivator-panel {
+    background: #1f2937;
+    border-color: #374151;
+  }
+  
+  .ai-content {
+    color: #f9fafb;
+  }
+  
+  .ai-refresh-info {
+    color: #9ca3af;
+  }
+}
+
+/* Scrollbar Styling */
+.ai-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ai-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.ai-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.ai-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Focus States for Accessibility */
+.ai-header:focus,
+.ai-manual-button:focus,
+.ai-voice-button:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Animation for content updates */
+.ai-content {
+  transition: opacity 0.2s ease;
+}
+
+.ai-content.updating {
+  opacity: 0.7;
+}
+
+/* Expand/Collapse animations */
+.ai-content {
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.ai-motivator-panel.ai-collapsed .ai-content {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 16px;
+}
+
+/* Hover effects for better UX */
+.ai-motivator-panel:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Status indicators */
+.ai-status.success {
+  color: #10b981;
+}
+
+.ai-status.error {
+  color: #ef4444;
+}
+
+.ai-status.loading {
+  color: #f59e0b;
+}
+
+.ai-status.info {
+  color: #3b82f6;
+}
+
+/* Smooth text transitions */
+.ai-content {
+  transition: opacity 0.15s ease-in-out;
+}
+
+/* Voice feedback visual cues */
+.ai-voice-indicator.speaking {
+  animation: voicePulse 0.8s ease-in-out infinite;
+}
+
+@keyframes voicePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+} 
