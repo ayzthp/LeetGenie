@@ -29,20 +29,54 @@ leetcode-ai-motivator/
 
 ## 🛠️ Installation
 
-### Method 1: Load Unpacked Extension
+### Prerequisites
+
+1. **Get a Gemini API Key**:
+   - Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
+   - Create a new API key
+   - Copy the key for the next step
+
+### Method 1: Quick Setup
 
 1. **Download the extension files** to your computer
-2. **Open Chrome** and go to `chrome://extensions/`
-3. **Enable Developer Mode** (toggle in top right)
-4. **Click "Load unpacked"** and select the extension folder
-5. **Pin the extension** to your toolbar for easy access
+2. **Run the setup script**:
+   ```bash
+   python3 setup_api_key.py
+   ```
+3. **Enter your Gemini API key** when prompted
+4. **Copy the API key to background.js**:
+   ```bash
+   python3 copy_api_key.py
+   ```
+5. **Open Chrome** and go to `chrome://extensions/`
+6. **Enable Developer Mode** (toggle in top right)
+7. **Click "Load unpacked"** and select the extension folder
+8. **Pin the extension** to your toolbar for easy access
 
-### Method 2: From Source
+### Method 2: Manual Setup
 
 1. **Clone or download** this repository
-2. **Open Chrome** and go to `chrome://extensions/`
-3. **Enable Developer Mode**
-4. **Click "Load unpacked"** and select the project folder
+2. **Copy the environment template**:
+   ```bash
+   cp env.example .env
+   ```
+3. **Edit the .env file** and add your Gemini API key:
+   ```
+   GEMINI_API_KEY=your_actual_api_key_here
+   ```
+4. **Run the copy script**:
+   ```bash
+   python3 copy_api_key.py
+   ```
+5. **Open Chrome** and go to `chrome://extensions/`
+6. **Enable Developer Mode**
+7. **Click "Load unpacked"** and select the project folder
+
+### 🔒 Security Note
+
+- Your API key is stored in the `.env` file (not committed to git)
+- The `.env` file is automatically ignored by git
+- Never share your `.env` file or commit it to version control
 
 ## 🎯 How It Works
 
