@@ -20,7 +20,7 @@ python3 setup_api_key.py
    - Open `background.js` in your editor
    - Find line ~170: `const API_KEY = 'YOUR_GEMINI_API_KEY_HERE';`
    - Replace `'YOUR_GEMINI_API_KEY_HERE'` with your actual API key
-   - Example: `const API_KEY = 'AIzaSyC...';`
+   - Example: `const API_KEY = 'YOUR_GEMINI_API_KEY_HERE';`
 
 3. **Reload the extension:**
    - Go to `chrome://extensions/`

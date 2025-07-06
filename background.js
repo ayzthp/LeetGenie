@@ -1,5 +1,5 @@
 // Gemini API configuration
-const GEMINI_API_KEY = "AIzaSyCi_ze0wTXXJ97Xn4c8dLNPOHllrl1Kp8Y";
+const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY_HERE"; // Set this from your .env file
 const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
 
 // Store for rate limiting
@@ -182,7 +182,7 @@ async function callGeminiAPI(prompt) {
   try {
     // TODO: Replace with your actual Gemini API key
     // Get your API key from: https://makersuite.google.com/app/apikey
-    const API_KEY = 'AIzaSyCi_ze0wTXXJ97Xn4c8dLNPOHllrl1Kp8Y'; // Replace this with your actual API key
+    const API_KEY = 'YOUR_GEMINI_API_KEY_HERE'; // Replace this with your actual API key
     const API_URL = 'https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent';
     
     if (API_KEY === 'YOUR_GEMINI_API_KEY_HERE') {
